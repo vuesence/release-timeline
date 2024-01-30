@@ -1,7 +1,7 @@
 {
   "name": "release-timeline",
   "private": false,
-  "version": "0.2.9",
+  "version": "0.3.0",
   "type": "module",
   "source": "src/index.ts",
   "main": "./dist/index.umd.js",
@@ -22,7 +22,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite build -w",
+    "dev": "vite",
     "build": "vite build"
   },
   "devDependencies": {
