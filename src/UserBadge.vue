@@ -8,9 +8,11 @@ defineProps<{
 <template>
   <a :href="`https://github.com/${username}`" rel="noopener noreferrer" target="_blank" class="user">
     <span class="avatar">
-      <img class="" :src="`https://github.com/${username}.png`" alt="">
+      <img :src="`https://github.com/${username}.png`" alt="">
     </span>
-    {{ username }}
+    <span class="username">
+      {{ username }}
+    </span>
   </a>
 </template>
 <!-- 
@@ -23,31 +25,36 @@ defineProps<{
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  padding: 0.125rem 0.2rem;
-  gap: 0.25rem;
-  text-decoration: inherit;
-  border: 1px solid var(--rt-c-divider);
-  border-radius: 9999px;
+  padding: 2px 4px 2px 3px;
+  /* gap: 0.25rem; */
+  /* text-decoration: inherit; */
+  /* border: 1px solid var(--rt-c-border); */
   font-weight: 500;
   font-size: .75rem;
   line-height: 1rem;
-  background-color: var(--rt-c-bg-alt);
-  vertical-align: middle;
+  /* border-radius: 9999px; */
+  /* background-color: var(--rt-c-bg-alt); */
+  /* vertical-align: middle; */
 
   .avatar {
     border-radius: 9999px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-shrink: 0; */
     width: 1rem;
-    height: 1rem;
-    display: inline-flex;
-    position: relative;
+    /* height: 1rem; */
+    /* display: inline-flex; */
+    /* position: relative; */
+    border: 1px solid var(--rt-c-border);
 
     img {
       border-radius: 9999px;
       width: 1rem;
     }
+  }
+
+  .username {
+    padding: 0 0 2px 6px;
   }
 }
 </style>

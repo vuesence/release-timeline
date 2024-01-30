@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { nextTick, onMounted, ref } from "vue";
-import ReleaseItem from "./ReleaseItem.vue";
+import TimelineItem from "./TimelineItem.vue";
 import { type Release, loadReleases } from "./utils";
 
 const props = defineProps<{
@@ -38,7 +38,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="release-timeline">
+  <section class="release-timeline dark1">
     <div id="stars"></div>
     <div id="stars2"></div>
     <div id="stars3"></div>
@@ -61,7 +61,7 @@ onMounted(async () => {
       <section v-for="(release, index) in releases" :key="release.day.getUTCDate()" class="timeline-record rt-tr-el"
         :style="{ paddingTop: `${release.diff * options.timeline.span}px` }">
         <div class="line" />
-        <ReleaseItem :release="release.data" :options="options" :class="index % 2 === 1 ? 'left' : 'right'" />
+        <TimelineItem :release="release.data" :options="options" :class="index % 2 === 1 ? 'left' : 'right'" />
       </section>
     </div>
   </section>
@@ -72,6 +72,10 @@ onMounted(async () => {
 </style>
 
 <style scoped>
+.dark {
+  /* background-color: var(--rt-c-bg-alt); */
+}
+
 .release-timeline {
   position: relative;
   display: flex;
@@ -95,7 +99,7 @@ onMounted(async () => {
 
       .github-link {
         display: flex;
-        border: 1px solid var(--rt-c-divider);
+        border: 1px solid var(--rt-c-border);
         border-radius: 0.3rem;
         padding: 8px;
         width: fit-content;

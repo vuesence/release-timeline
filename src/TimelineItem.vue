@@ -80,7 +80,7 @@ a {
   }
 
   .circle {
-    border: 1px solid var(--rt-c-divider);
+    border: 1px solid var(--rt-c-border);
     border-radius: 9999px;
     flex-shrink: 0;
     width: 8px;
@@ -118,9 +118,14 @@ a {
     }
 
     .release-name {
-      margin: 2px 0 6px 0;
-      font-size: 1.2rem;
+      margin: 3px 0 6px 0;
+      padding-top: 0;
+      border-top: 1px solid var(--rt-c-border);
+      color: var(--rt-c-text-2);
+      font-size: 1.15rem;
       font-weight: 600;
+      letter-spacing: 0.03em;
+      line-height: 32px;
     }
 
     .notes {
