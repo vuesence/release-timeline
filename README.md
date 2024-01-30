@@ -2,12 +2,13 @@
 
 ![](./rt-image.jpg)
 
-## [Documentation](https://vue-faq.org/ru/release-timeline/)
+## Documentation
+
+## [https://vue-faq.org/ru/release-timeline/](https://vue-faq.org/ru/release-timeline/)
 
 ## Installation
 
 ```bash [pnpm]
-# Install packages
 pnpm add release-timeline
 ```
 
@@ -30,4 +31,4 @@ Importing of the `animated-background.css` is optional. Be aware, the starred ba
 
 ## Contributors
 
-🚀 If you have any ideas for development of optimization of `vue-final-modal`, feel free to open [issues](https://github.com/vuesence/release-timeline/issues) or [pull requests](https://github.com/vuesence/release-timeline/pulls).
+🚀 If you have any ideas for development of optimization of `release-timeline`, feel free to open [issues](https://github.com/vuesence/release-timeline/issues) or [pull requests](https://github.com/vuesence/release-timeline/pulls).
