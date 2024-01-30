@@ -68,15 +68,7 @@ onMounted(async () => {
 </template>
 
 <style>
-:root {
-  --rt-c-text-1: var(--vp-c-text-1);
-  --rt-c-text-2: var(--vp-c-text-2);
-  --rt-c-text-3: var(--vp-c-text-3);
-  --rt-c-divider: var(--vp-c-divider);
-  --rt-c-bg-alt: var(--vp-c-bg-alt);
-  --rt-c-brand-1: var(--vp-c-brand-1);
-  --rt-c-brand-2: var(--vp-c-brand-2);
-}
+@import "./variables.css";
 </style>
 
 <style scoped>
@@ -85,6 +77,7 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
   .header {
     text-align: center;
@@ -98,6 +91,7 @@ onMounted(async () => {
       width: fit-content;
       display: block;
       margin: auto;
+      text-decoration: none;
 
       .github-link {
         display: flex;
@@ -148,9 +142,5 @@ onMounted(async () => {
 
     }
   }
-}
-
-.vp-doc a {
-  text-decoration: none !important;
 }
 </style>
