@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["ES2021", "DOM", "ScriptHost"],
+    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "paths": { "@/*": ["./src/*"] },
+    "resolveJsonModule": true,
+    "typeRoots": ["./src"],
+    "allowJs": true,
+    "outDir": "./dist",
+    "esModuleInterop": true
+    // "types": ["node", "vite/client"]
+  },
+  "exclude": [
+    "./dist"
+  ]
+}
