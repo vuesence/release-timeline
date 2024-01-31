@@ -70,7 +70,13 @@ function toggle(_tab: string) {
     </div>
     <div v-if="curTab === 'commits'">
       <div v-for="commit in release.commits" :key="commit.url" class="issue-wrapper">
-        <a :href="commit.url" rel="noopener noreferrer" target="_blank" class="issue">
+        <a
+          v-if="!options.display.release.hideMergeCommits || !commit.title.startsWith('Merge ')"
+          :href="commit.url"
+          rel="noopener noreferrer"
+          target="_blank"
+          class="issue"
+        >
           <!-- <p>{{ commit.title }} - @{{ commit.author }}</p> -->
           <p>
             <span>{{ commit.title }}</span>

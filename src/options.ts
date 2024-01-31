@@ -39,6 +39,7 @@ export const DefaultOptions = {
       commits: true,
       pullsUsername: true,
       commitsUsername: false,
+      hideMergeCommits: true,
       // defaultOpenTab: "pulls",
     },
   },
