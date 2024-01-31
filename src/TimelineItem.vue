@@ -8,7 +8,6 @@ defineProps<{
   options: any
 }>();
 
-
 function formatDate(inputDate: string): string {
   const date = new Date(inputDate);
   return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
@@ -20,8 +19,10 @@ function formatDate(inputDate: string): string {
     <div class="circle"></div>
     <div class="content">
       <time :datetime="release.published_at">{{ formatDate(release.published_at) }}</time>
-      <a :href="`https://github.com/${options.github.owner}/${options.github.repo}/releases/tag/${release.tag_name}`"
-        rel="noopener noreferrer" target="_blank" class="tag-name">
+      <a
+        :href="`https://github.com/${options.github.owner}/${options.github.repo}/releases/tag/${release.tag_name}`"
+        rel="noopener noreferrer" target="_blank" class="tag-name"
+      >
         {{ release.tag_name }}
       </a>
       <h2 v-if="options.display.releaseName" class="release-name">
@@ -29,20 +30,6 @@ function formatDate(inputDate: string): string {
       </h2>
       <UserBadge :username="release.author" />
       <TimelineItemIssues :release="release" :options="options" />
-
-      <ul class="notes">
-        <li class="note">
-
-          <!-- pushed
-          <a
-            :href="`https://github.com/${options.github.owner}/${options.github.repo}/pull/138`" rel="noopener noreferrer" target="_blank"
-            class="details"
-          >
-            #138 feat: code
-            #138 feat: code block and inline code components
-          </a> -->
-        </li>
-      </ul>
     </div>
   </div>
 </template>

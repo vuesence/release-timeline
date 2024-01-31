@@ -1,8 +1,8 @@
 import { eachDayOfInterval, isSameDay } from "./date-utils";
 
 // export interface Release {
-//   published_at: string;
-//   release?: object;
+//   published_at: string
+//   release?: object
 // }
 
 export async function loadReleases(options) {

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import ReleaseTimeline from "./ReleaseTimeline.vue";
 import { DefaultOptions as options } from "./options";
 
@@ -6,23 +7,49 @@ import { DefaultOptions as options } from "./options";
 // import "release-timeline/dist/animated-background.css";
 import "./animated-background.css";
 
+const key = ref(0);
+
 // configure options
 options.github.owner = "vuesence";
 options.github.repo = "arty-crafty";
+
+function changeRepo() {
+  const url = prompt("Please enter Github Repo url", "https://github.com/vitejs/vite.git");
+  console.log(url);
+  const pathParts = url.split("/").filter(part => part); // Remove empty parts
+
+  // console.log(pathParts);
+  options.github.owner = pathParts[2];
+  options.github.repo = pathParts[3].substring(0, pathParts[3].length - 4);
+  key.value++;
+}
 </script>
 
 <template>
-  <ReleaseTimeline :options="options" />
+  <div class="change-repo" @click="changeRepo">
+    Change Repo
+  </div>
+  <ReleaseTimeline :key="key" :options="options" />
 </template>
 
 <style>
+.change-repo {
+  position: fixed;
+  color: var(--rt-c-text-2);
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  cursor: pointer;
+}
 :root {
   --rt-c-text-1: #3c3c43;
   --rt-c-text-2: #3c3c43c7;
   --rt-c-text-3: #3c3c438f;
   --rt-c-border: #e2e2e3;
+  --rt-c-bg: #ffffff;
   --rt-c-bg-alt: #f6f6f7;
   --rt-c-brand-1: #3451b2;
   --rt-c-brand-2: #3a5ccc;
+  --rt-c-circle-bg: #888;
 }
 </style>
