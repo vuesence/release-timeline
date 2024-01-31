@@ -59,14 +59,23 @@ function toggle(_tab: string) {
           :href="`https://github.com/${options.github.owner}/${options.github.repo}/pull/${pull.number}`"
           rel="noopener noreferrer" target="_blank" class="issue"
         >
-          <p>#{{ pull.number }} {{ pull.title }} - @{{ pull.author }}</p>
+          <p>
+            <span>
+              #{{ pull.number }}: {{ pull.title }}
+            </span>
+            <span v-if="options.display.release.pullsUsername"> - @{{ pull.author }}</span>
+          </p>
         </a>
       </div>
     </div>
     <div v-if="curTab === 'commits'">
       <div v-for="commit in release.commits" :key="commit.url" class="issue-wrapper">
         <a :href="commit.url" rel="noopener noreferrer" target="_blank" class="issue">
-          <p>{{ commit.title }} - @{{ commit.author }}</p>
+          <!-- <p>{{ commit.title }} - @{{ commit.author }}</p> -->
+          <p>
+            <span>{{ commit.title }}</span>
+            <span v-if="options.display.release.commitsUsername"> - @{{ commit.author }}</span>
+          </p>
         </a>
       </div>
     </div>

@@ -114,12 +114,13 @@ onMounted(async () => {
         padding: 8px;
         width: fit-content;
         color: var(--rt-c-text-2);
-        font-size: 0.9;
+        font-size: 0.9rem;
         font-weight: 600;
         transition: color 0.3s ease-in-out;
 
         .github-icon {
           margin-right: 0.6em;
+          display: flex;
         }
 
         &:hover {

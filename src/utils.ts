@@ -13,7 +13,7 @@ export async function loadReleases(options) {
     const type = ["releases", "pulls", "commits"][index];
     let url;
     if (options.github[type].feedType === "github") {
-      url = `https://api.github.com/repos/${options.github.owner}/${options.github.repo}/${type}?per_page=${options.github.size}`;
+      url = `https://api.github.com/repos/${options.github.owner}/${options.github.repo}/${type}?per_page=${options.github[type].size}&state=closed`;
       if (options.github.token) {
         headers = {
           Authorization: `token ${options.github.token}`,

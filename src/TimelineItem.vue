@@ -25,10 +25,10 @@ function formatDate(inputDate: string): string {
       >
         {{ release.tag_name }}
       </a>
-      <h2 v-if="options.display.releaseName" class="release-name">
+      <h2 v-if="options.display.release.name" class="release-name">
         {{ release.name }}
       </h2>
-      <UserBadge :username="release.author" />
+      <UserBadge v-if="options.display.release.username" :username="release.author" />
       <TimelineItemIssues :release="release" :options="options" />
     </div>
   </div>

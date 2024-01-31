@@ -33,6 +33,9 @@ function changeRepo() {
 </template>
 
 <style>
+body {
+  margin: 0;
+}
 .change-repo {
   position: fixed;
   color: var(--rt-c-text-2);

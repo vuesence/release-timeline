@@ -40,8 +40,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:lib": "vite --config vite.config-lib.ts build"
+    "build": "vite build"
   },
   "peerDependencies": {
     "vue": ">=3.0.0"
