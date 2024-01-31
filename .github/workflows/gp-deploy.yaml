@@ -1,7 +1,7 @@
 name: Build and Deploy
 on:
   push:
-    branches: [main]
+    # branches: [main]
   workflow_dispatch:
   # branches: [ "main", "development" ]
 permissions:
