@@ -36,17 +36,17 @@ export async function loadReleases(options) {
     = new Date(releases[0].published_at).getTime()
     - new Date(releases[releases.length - 1].published_at).getTime();
   // console.log(days);
-  const dates = days
-    .reverse()
-    .map((day) => {
-      return {
-        day,
-        release: releases.find(release =>
-          isSameDay(new Date(release.published_at), day),
-        ),
-      };
-    })
-    .filter(date => date.release)
+  const elements = new Set<{ day: Date, release }>();
+  days.reverse().forEach((day) => {
+    releases.filter(release =>
+      isSameDay(new Date(release.published_at), day),
+    ).forEach((release) => {
+      elements.add({ day, release });
+    });
+  });
+  // console.log(elements);
+
+  const dates = [...elements]
     .map((date, index) => {
       const curDate = new Date(date.release.published_at);
       const prevDate
@@ -80,7 +80,7 @@ export async function loadReleases(options) {
       };
     });
 
-  console.log(dates);
+  // console.log(dates);
 
   return dates;
 }
