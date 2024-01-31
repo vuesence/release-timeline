@@ -11,7 +11,7 @@ const key = ref(0);
 
 // configure options
 options.github.owner = "vuesence";
-options.github.repo = "arty-crafty";
+options.github.repo = "release-timeline";
 
 function changeRepo() {
   const url = prompt("Please enter Github Repo url", "https://github.com/vitejs/vite.git");
