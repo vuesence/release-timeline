@@ -63,7 +63,7 @@ function toggle(_tab: string) {
             <span>
               #{{ pull.number }}: {{ pull.title }}
             </span>
-            <span v-if="options.display.release.pullsUsername"> - @{{ pull.author }}</span>
+            <span v-if="!options.display.release.hidePullUsername"> - @{{ pull.author }}</span>
           </p>
         </a>
       </div>
@@ -80,7 +80,7 @@ function toggle(_tab: string) {
           <!-- <p>{{ commit.title }} - @{{ commit.author }}</p> -->
           <p>
             <span>{{ commit.title }}</span>
-            <span v-if="options.display.release.commitsUsername"> - @{{ commit.author }}</span>
+            <span v-if="!options.display.release.hideCommitUsername"> - @{{ commit.author }}</span>
           </p>
         </a>
       </div>

@@ -5,6 +5,7 @@ import { DefaultOptions as options } from "./options";
 
 // import "./style.css";
 // import "release-timeline/dist/animated-background.css";
+
 import "./animated-background.css";
 
 const key = ref(0);
@@ -15,10 +16,7 @@ options.github.repo = "release-timeline";
 
 function changeRepo() {
   const url = prompt("Please enter Github Repo url", "https://github.com/vitejs/vite.git");
-  console.log(url);
   const pathParts = url.split("/").filter(part => part); // Remove empty parts
-
-  // console.log(pathParts);
   options.github.owner = pathParts[2];
   options.github.repo = pathParts[3].substring(0, pathParts[3].length - 4);
   key.value++;
