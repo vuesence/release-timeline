@@ -31,6 +31,10 @@ function changeRepo() {
 </template>
 
 <style>
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+}
 body {
   margin: 0;
 }
