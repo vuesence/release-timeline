@@ -3,6 +3,7 @@
   --rt-c-text-2: var(--vp-c-text-2);
   --rt-c-text-3: var(--vp-c-text-3);
   --rt-c-border: var(--vp-c-border);
+  --rt-c-bg: var(--vp-c-bg);
   --rt-c-bg-alt: var(--vp-c-bg-alt);
   --rt-c-brand-1: var(--vp-c-brand-1);
   --rt-c-brand-2: var(--vp-c-brand-2);
@@ -14,6 +15,7 @@
   --rt-c-text-2: rgba(235, 235, 245, 0.6);
   --rt-c-text-3: rgba(235, 235, 245, 0.38);
   --rt-c-border: #2e2e32;
+  --rt-c-bg: #1b1b1f;
   --rt-c-bg-alt: #161618;
   --rt-c-brand-1: #5c73e7;
   --rt-c-brand-2: #a8b1ff;

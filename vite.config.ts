@@ -13,7 +13,7 @@ export default defineConfig({
       include: "src",
     }),
   ],
-  publicDir: false,
+  // publicDir: false,
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
