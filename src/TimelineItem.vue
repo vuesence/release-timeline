@@ -1,20 +1,17 @@
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
+// import { onMounted, ref } from "vue";
 import UserBadge from "./UserBadge.vue";
+import TimelineItemIssues from "./TimelineItemIssues.vue";
 
 defineProps<{
   release: any
   options: any
 }>();
 
-onMounted(async () => {
-
-});
 
 function formatDate(inputDate: string): string {
   const date = new Date(inputDate);
-  const options = { year: "numeric", month: "short", day: "numeric" };
-  return date.toLocaleDateString("en-US", options as Intl.DateTimeFormatOptions);
+  return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
 }
 </script>
 
@@ -30,10 +27,11 @@ function formatDate(inputDate: string): string {
       <h2 v-if="options.display.releaseName" class="release-name">
         {{ release.name }}
       </h2>
-      <UserBadge :username="release.author.login" />
+      <UserBadge :username="release.author" />
+      <TimelineItemIssues :release="release" :options="options" />
+
       <ul class="notes">
         <li class="note">
-
 
           <!-- pushed
           <a
@@ -48,10 +46,6 @@ function formatDate(inputDate: string): string {
     </div>
   </div>
 </template>
-
-<!-- <style>
-@import "./variables.css";
-</style> -->
 
 <style scoped>
 a {
@@ -76,6 +70,10 @@ a {
 
     .content {
       align-items: flex-end;
+    }
+
+    .release-name {
+      text-align: end;
     }
   }
 
@@ -104,7 +102,7 @@ a {
 
     .tag-name {
       color: var(--rt-c-brand-1);
-      /* width: fit-content; */
+      width: fit-content;
       /* text-align: right; */
       font-weight: 700;
       font-size: 1.4rem;
@@ -118,15 +116,23 @@ a {
     }
 
     .release-name {
-      margin: 3px 0 6px 0;
+      margin: 3px 0 3px 0;
       padding-top: 0;
       border-top: 1px solid var(--rt-c-border);
       color: var(--rt-c-text-2);
       font-size: 1.15rem;
       font-weight: 600;
       letter-spacing: 0.03em;
-      line-height: 32px;
+      line-height: 1.4rem;
     }
+
+    /* .issues { */
+    .issue-tabs {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    /* } */
 
     .notes {
       list-style: none;

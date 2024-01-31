@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import ReleaseTimeline from "./ReleaseTimeline.vue";
-import { DefaultOptions as options } from "./utils";
+import { DefaultOptions as options } from "./options";
+
 // import "./style.css";
 // import "release-timeline/dist/animated-background.css";
+import "./animated-background.css";
 
 // configure options
 options.github.owner = "vuesence";

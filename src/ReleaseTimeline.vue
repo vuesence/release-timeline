@@ -11,10 +11,10 @@ const props = defineProps<{
 //   import("./background.css");
 // }
 
-const releases = ref();
+const data = ref();
 
 onMounted(async () => {
-  releases.value = await loadReleases(props.options);
+  data.value = await loadReleases(props.options);
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -58,10 +58,10 @@ onMounted(async () => {
       </a>
     </header>
     <div class="timeline">
-      <section v-for="(release, index) in releases" :key="release.day.getUTCDate()" class="timeline-record rt-tr-el"
+      <section v-for="(release, index) in data" :key="release.day.getUTCDate()" class="timeline-record rt-tr-el"
         :style="{ paddingTop: `${release.diff * options.timeline.span}px` }">
         <div class="line" />
-        <TimelineItem :release="release.data" :options="options" :class="index % 2 === 1 ? 'left' : 'right'" />
+        <TimelineItem :release="release.release" :options="options" :class="index % 2 === 1 ? 'left' : 'right'" />
       </section>
     </div>
   </section>
@@ -73,7 +73,7 @@ onMounted(async () => {
 
 <style scoped>
 .dark {
-  /* background-color: var(--rt-c-bg-alt); */
+  background-color: var(--rt-c-bg-alt);
 }
 
 .release-timeline {
@@ -82,12 +82,14 @@ onMounted(async () => {
   flex-direction: column;
   justify-content: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--rt-c-bg);
 
   .header {
     text-align: center;
     margin-bottom: 1rem;
 
     h1 {
+      color: var(--rt-c-text-2);
       margin-bottom: 0.9rem;
     }
 

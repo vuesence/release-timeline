@@ -1,5 +1,5 @@
 import ReleaseTimeline from "./ReleaseTimeline.vue";
-import { DefaultOptions } from "./utils";
+import { DefaultOptions } from "./options";
 
 // import type { Vfm } from './Modal'
 

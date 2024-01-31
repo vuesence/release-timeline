@@ -5,20 +5,20 @@ export const DefaultOptions = {
     token: "",
     // feedType: github or url
     releases: {
-      // feedType: "github",
-      feedType: "url",
+      feedType: "github",
+      // feedType: "url",
       url: "/releases.json",
       size: 20,
     },
     pulls: {
-      // feedType: "github",
-      feedType: "url",
+      feedType: "github",
+      // feedType: "url",
       url: "pulls.json",
       size: 20,
     },
     commits: {
-      // feedType: "github",
-      feedType: "url",
+      feedType: "github",
+      // feedType: "url",
       url: "commits.json",
       size: 30,
     },
@@ -35,7 +35,7 @@ export const DefaultOptions = {
       desc: true,
       pulls: true,
       commits: true,
-      defaultOpenTab: "pulls",
+      // defaultOpenTab: "pulls",
     },
   },
 };
