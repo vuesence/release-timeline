@@ -50,7 +50,7 @@ function toggle(_tab: string) {
     </button>
   </div>
   <div class="issues" :class="[{ open: curTab !== '' }, curTab]">
-    <div v-if="curTab === 'desc'">
+    <div v-if="curTab === 'desc' && release.desc">
       <div class="issue" v-html="release.desc"></div>
     </div>
     <div v-if="curTab === 'pulls'">
@@ -137,18 +137,20 @@ a {
       border-color: var(--rt-c-border);
       margin-top: 5px;;
 
-      >>> a {
+      :deep(a) {
         color: var(--rt-c-brand-1);
         font-weight: 500;
         text-decoration: none;
       }
 
-      >>> p {
+      :deep(p) {
         margin: 1px 0 0 0;
-
         .left & {
           text-align: right;
         }
+      }
+      .desc & :deep(p) {
+        margin-top: 8px;
       }
     /* } */
   }
