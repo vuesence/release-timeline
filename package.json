@@ -1,23 +1,40 @@
 {
   "name": "release-timeline",
-  "private": false,
-  "version": "0.3.0",
   "type": "module",
+  "version": "0.3.0",
+  "private": false,
   "source": "src/index.ts",
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.es.mjs",
-  "types": "./dist/index.d.ts",
+  "author": "Ruslan Makarov",
+  "license": "MIT",
+  "homepage": "https://vue-faq.org/ru/release-timeline",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vuesence/release-timeline.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vuesence/release-timeline/issues",
+    "email": "ruslan.makarov@gmail.com"
+  },
+  "keywords": [
+    "vue",
+    "github",
+    "release",
+    "timeline"
+  ],
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.es.mjs",
-      "require": "./dist/index.umd.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.umd.js"
     },
     "./dist/*.css": {
       "import": "./dist/*.css",
       "require": "./dist/*.css"
     }
   },
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -25,33 +42,17 @@
     "dev": "vite",
     "build": "vite build"
   },
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.3",
     "@types/node": "^20.11.10",
     "@vitejs/plugin-vue": "^5.0.3",
     "postcss-nesting": "^12.0.2",
+    "typescript": "^5.3.3",
     "vite": "^5.0.12",
     "vite-plugin-dts": "^3.7.2",
     "vue": "^3.4.15"
-  },
-  "peerDependencies": {
-    "vue": ">=3.0.0"
-  },
-  "homepage": "https://vue-faq.org/ru/release-timeline",
-  "bugs": {
-    "url": "https://github.com/vuesence/release-timeline/issues",
-    "email": "ruslan.makarov@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vuesence/release-timeline.git"
-  },
-  "author": "Ruslan Makarov",
-  "license": "MIT",
-  "keywords": [
-    "vue",
-    "github",
-    "release",
-    "timeline"
-  ]
+  }
 }

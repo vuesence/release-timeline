@@ -17,6 +17,9 @@ devDependencies:
   postcss-nesting:
     specifier: ^12.0.2
     version: 12.0.2(postcss@8.4.33)
+  typescript:
+    specifier: ^5.3.3
+    version: 5.3.3
   vite:
     specifier: ^5.0.12
     version: 5.0.12(@types/node@20.11.10)
