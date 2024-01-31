@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { nextTick, onMounted, ref } from "vue";
-import ReleaseItem from "./ReleaseItem.vue";
+import TimelineItem from "./TimelineItem.vue";
 import { type Release, loadReleases } from "./utils";
 
 const props = defineProps<{
@@ -38,7 +38,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="release-timeline">
+  <section class="release-timeline dark1">
     <div id="stars"></div>
     <div id="stars2"></div>
     <div id="stars3"></div>
@@ -61,30 +61,27 @@ onMounted(async () => {
       <section v-for="(release, index) in releases" :key="release.day.getUTCDate()" class="timeline-record rt-tr-el"
         :style="{ paddingTop: `${release.diff * options.timeline.span}px` }">
         <div class="line" />
-        <ReleaseItem :release="release.data" :options="options" :class="index % 2 === 1 ? 'left' : 'right'" />
+        <TimelineItem :release="release.data" :options="options" :class="index % 2 === 1 ? 'left' : 'right'" />
       </section>
     </div>
   </section>
 </template>
 
 <style>
-:root {
-  --rt-c-text-1: var(--vp-c-text-1);
-  --rt-c-text-2: var(--vp-c-text-2);
-  --rt-c-text-3: var(--vp-c-text-3);
-  --rt-c-divider: var(--vp-c-divider);
-  --rt-c-bg-alt: var(--vp-c-bg-alt);
-  --rt-c-brand-1: var(--vp-c-brand-1);
-  --rt-c-brand-2: var(--vp-c-brand-2);
-}
+@import "./variables.css";
 </style>
 
 <style scoped>
+.dark {
+  /* background-color: var(--rt-c-bg-alt); */
+}
+
 .release-timeline {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
   .header {
     text-align: center;
@@ -98,10 +95,11 @@ onMounted(async () => {
       width: fit-content;
       display: block;
       margin: auto;
+      text-decoration: none;
 
       .github-link {
         display: flex;
-        border: 1px solid var(--rt-c-divider);
+        border: 1px solid var(--rt-c-border);
         border-radius: 0.3rem;
         padding: 8px;
         width: fit-content;
@@ -148,9 +146,5 @@ onMounted(async () => {
 
     }
   }
-}
-
-.vp-doc a {
-  text-decoration: none !important;
 }
 </style>
