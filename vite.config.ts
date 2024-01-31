@@ -7,6 +7,7 @@ import postcssNesting from "postcss-nesting";
 const name = "index";
 
 export default defineConfig({
+  base: "/release-timeline/",
   plugins: [
     vue(),
     dts({
@@ -18,7 +19,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
       name,
-      fileName: (format) => `${name}.${format}.${format === "es" ? "m" : ""}js`,
+      fileName: format => `${name}.${format}.${format === "es" ? "m" : ""}js`,
     },
     rollupOptions: {
       external: ["vue"],
@@ -34,7 +35,7 @@ export default defineConfig({
       plugins: [postcssNesting],
     },
   },
-  define: {
-    __DEV__: JSON.stringify(!process.env.prod),
-  },
+  // define: {
+  //   __DEV__: JSON.stringify(!process.env.prod),
+  // },
 });

@@ -20,7 +20,7 @@ defineProps<{
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  padding: 2px 4px 2px 3px;
+  padding: 2px 4px 2px 0px;
   font-weight: 500;
   font-size: .75rem;
   line-height: 1rem;
