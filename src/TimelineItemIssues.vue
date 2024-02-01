@@ -58,6 +58,7 @@ function toggle(_tab: string) {
   <div
     ref="issuesSection"
     class="issues"
+    :class="curTab"
     :style="{ maxHeight: curTab === '' ? 0 : `${issuesMaxHeight}px` }"
   >
     <section v-if="release.desc" :class="{ open: curTab === 'desc' }">
@@ -69,7 +70,7 @@ function toggle(_tab: string) {
           :href="`https://github.com/${options.github.owner}/${options.github.repo}/pull/${pull.number}`"
           rel="noopener noreferrer" target="_blank" class="issue"
         >
-          <p class="issue-paragraph">
+          <p>
             <span>
               #{{ pull.number }}:
             </span>
@@ -88,8 +89,7 @@ function toggle(_tab: string) {
           target="_blank"
           class="issue"
         >
-          <!-- <p>{{ commit.title }} - @{{ commit.author }}</p> -->
-          <p class="issue-paragraph">
+          <p>
             <span v-html="commit.title" />
             <span v-if="!options.display.release.hideCommitUsername"> - @{{ commit.author }}</span>
           </p>

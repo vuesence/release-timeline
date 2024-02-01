@@ -101,14 +101,11 @@ function formatDesc(str) {
     const headerLevel = level.length;
     return `<h${headerLevel}>${text}</h${headerLevel}>`;
   });
-  // console.log(str);
-  str = `<p>${str}`;
   str = str
     .split("\r\n")
     .filter(str => str)
     .map(str => str.trim())
     .join("</p><p>");
-  str += "</p>";
   return str;
 }
 

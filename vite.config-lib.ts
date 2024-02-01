@@ -2,21 +2,14 @@ import path from "node:path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
-// import dts from "vite-plugin-dts";
-// import postcssNesting from "postcss-nesting";
-
 const name = "index";
 
 export default defineConfig({
   // base: "/release-timeline/",
   plugins: [
     vue(),
-    // vue({ customElement: false }),
-    // dts({
-    //   include: "src",
-    // }),
   ],
-  publicDir: false,
+  // publicDir: true,
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
@@ -32,12 +25,4 @@ export default defineConfig({
       },
     },
   },
-  // css: {
-  //   postcss: {
-  //     plugins: [postcssNesting],
-  //   },
-  // },
-  // define: {
-  //   __DEV__: JSON.stringify(!process.env.prod),
-  // },
 });

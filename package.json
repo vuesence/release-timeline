@@ -1,7 +1,7 @@
 {
   "name": "release-timeline",
   "type": "module",
-  "version": "0.5.0",
+  "version": "0.5.4",
   "private": false,
   "source": "src/index.ts",
   "author": "Ruslan Makarov",
@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.3",
-    "@types/node": "^20.11.10",
+    "@types/node": "^20.11.16",
     "@vitejs/plugin-vue": "^5.0.3",
     "sass": "^1.70.0",
     "typescript": "^5.3.3",

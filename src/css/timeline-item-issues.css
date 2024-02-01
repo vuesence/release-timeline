@@ -3,6 +3,40 @@ a {
   color: var(--rt-c-brand-1);
 }
 
+.release-timeline .issues h1,
+.release-timeline .issues h2,
+.release-timeline .issues h3,
+.release-timeline .issues h4,
+.release-timeline .issues h5,
+.release-timeline .issues h6 {
+  margin: 7px 0 10px 0;
+  border-top: none;
+  padding: 0;
+}
+
+.release-timeline .issue p {
+  margin: 5px 0 3px 0;
+  line-height: .9rem;
+}
+
+.release-timeline .commits .issue p,
+.release-timeline .pulls .issue p {
+  margin: 1px 0 0 0;
+  /* line-height: .9rem; */
+}
+
+.release-timeline .issues h1 {
+  font-size: 1.2rem;
+}
+
+.release-timeline .issues h2 {
+  font-size: 1.05rem;
+}
+
+.release-timeline .issues h3 {
+  font-size: 1rem;
+}
+
 .tab {
   text-wrap: nowrap;
   background-color: inherit;
@@ -40,6 +74,7 @@ a {
     opacity: 0;
     display: none;
     transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+
     &.open {
       opacity: 1;
       display: block;
@@ -47,45 +82,17 @@ a {
     }
   }
 
-  /* .issue-wrapper { */
-    .issue {
-      font-size: 0.8rem;
-      letter-spacing: -0.3px;
-      color: var(--rt-c-text-2);
-      line-height: 0.8rem;
-      display: block;
-      border-style: dashed;
-      border-width: 1px;
-      padding: 3px 4px;
-      border-color: var(--rt-c-border);
-      margin-top: 5px;
-      font-weight: 400;
-
-      .issue-paragraph {
-        margin: 1px 0 0 0;
-        line-height: 0.8rem;
-      }
-
-      :deep(a) {
-        color: var(--rt-c-brand-1);
-        text-decoration: none;
-      }
-
-      .desc & :deep(p) {
-        margin-top: 8px;
-      }
-    /* } */
-  }
-}
-:deep(h2) {
-  margin: 0 0 5px 0;
-  padding: 0;
-  border-top: none;
-}
-:deep(p) {
-  margin: 0 0 8px 0;
-  line-height: 0.9rem;
-  .left & {
-    text-align: right;
+  .issue {
+    font-size: 0.8rem;
+    letter-spacing: -0.3px;
+    color: var(--rt-c-text-2);
+    line-height: 0.8rem;
+    display: block;
+    border-style: dashed;
+    border-width: 1px;
+    padding: 3px 4px;
+    border-color: var(--rt-c-border);
+    margin-top: 5px;
+    font-weight: 400;
   }
 }

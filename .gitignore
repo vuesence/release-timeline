@@ -6,3 +6,4 @@ dist
 *.local
 public/*.json
 TO_DELETE
+public/

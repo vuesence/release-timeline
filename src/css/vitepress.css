@@ -10,6 +10,32 @@
   --rt-c-circle-bg: #888;
 }
 
-.release-timeline {
+.vp-doc .release-timeline {
   min-height: unset !important;
+}
+.vp-doc .release-timeline a {
+  text-decoration: none;
+}
+.vp-doc .release-timeline .issues h1, 
+.vp-doc .release-timeline .issues h2, 
+.vp-doc .release-timeline .issues h3, 
+.vp-doc .release-timeline .issues h4, 
+.vp-doc .release-timeline .issues h5, 
+.vp-doc .release-timeline .issues h6 {
+  margin: 3px 0 0 0;
+  border-top: none;
+  padding: 0;
+}
+.vp-doc .release-timeline .issue p {
+  margin: 5px 0 0;
+  line-height: .8rem;
+}
+.vp-doc .release-timeline .issues h1 {
+  font-size: 1.2rem;
+}
+.vp-doc .release-timeline .issues h2 {
+  font-size: 1.05rem;
+}
+.vp-doc .release-timeline .issues h3 {
+  font-size: 1rem;
 }
