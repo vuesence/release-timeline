@@ -5,11 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Release Timeline CDN demo</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-    <script src="https://unpkg.com/release-timeline@0.4.6/dist/index.umd.js"></script>
-    <link href="https://unpkg.com/release-timeline@0.4.6/dist/style.css" rel="stylesheet">
-    <!-- <link href="https://unpkg.com/release-timeline@0.4.5/dist/animated-background.css" rel="stylesheet" /> -->
+    <script src="https://unpkg.com/release-timeline/dist/index.umd.js"></script>
+    <link href="https://unpkg.com/release-timeline/dist/animated-background.css" rel="stylesheet" />
+    <script>
+      window.rt_options = {
+        github: {
+          owner: "vuesence",
+          repo: "release-timeline"
+        }
+      };
+    </script>
   </head>
-  <body class="dark1">
-    <release-timeline options="{&quot;github&quot;: {&quot;owner&quot;: &quot;vuesence&quot;, &quot;repo&quot;: &quot;release-timeline&quot;}}"></release-timeline>
+  <body class="">
+    <div class="bg-stars" id="stars"></div>
+    <div class="bg-stars" id="stars2"></div>
+    <div class="bg-stars" id="stars3"></div>
+    <!-- <release-timeline options="{&quot;github&quot;: {&quot;owner&quot;: &quot;vuejs&quot;, &quot;repo&quot;: &quot;vite&quot;}}"></release-timeline> -->
+    <release-timeline options="" />
   </body>
 </html>
+
+
+<style>
+
+body {
+  --rt-c-text-1: rgba(255, 255, 245, 0.86);
+  --rt-c-text-2: rgba(235, 235, 245, 0.6);
+  --rt-c-text-3: rgba(235, 235, 245, 0.38);
+  --rt-c-border: #2e2e32;
+  --rt-c-bg: transparent;
+  --rt-c-bg-issues: #1b1b1f;
+  --rt-c-bg-alt: #161618;
+  --rt-c-brand-1: #5c73e7;
+  --rt-c-brand-2: #a8b1ff;
+  --rt-c-circle-bg: #888;
+  background-color: #1b1b1f;
+}
+  
+</style>
