@@ -10,14 +10,6 @@
   --rt-c-circle-bg: #888;
 }
 
-.dark {
-  --rt-c-text-1: rgba(255, 255, 245, 0.86);
-  --rt-c-text-2: rgba(235, 235, 245, 0.6);
-  --rt-c-text-3: rgba(235, 235, 245, 0.38);
-  --rt-c-border: #2e2e32;
-  --rt-c-bg: #1b1b1f;
-  --rt-c-bg-alt: #161618;
-  --rt-c-brand-1: #5c73e7;
-  --rt-c-brand-2: #a8b1ff;
-  --rt-c-circle-bg: #888;
+.release-timeline {
+  min-height: unset !important;
 }

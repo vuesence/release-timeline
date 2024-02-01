@@ -120,7 +120,7 @@ function findPullRequests(startDate, endDate, pulls) {
     })
     .map((pull) => {
       return {
-        title: pull.title,
+        title: pull.title.replace(/[feat|chore|fix|refactor|docs|style|test|revert|bump](.*?)\:/, "<i>$&</i>"),
         number: pull.number,
         author: pull.user.login,
       };
@@ -134,9 +134,23 @@ function findCommits(startDate, endDate, commits) {
     })
     .map((commit) => {
       return {
-        title: commit.commit.message,
-        url: commit.commit.url,
+        title: commit.commit.message.replace(/[feat|chore|fix|refactor|docs|style|test|revert|bump](.*?)\:/, "<i>$&</i>"),
+        url: commit.html_url,
         author: commit.author.login,
       };
     });
+}
+
+export function mergeObjects(defaults, overrides) {
+  for (const key in overrides) {
+    if (typeof overrides[key] === "object" && overrides[key] !== null && !Array.isArray(overrides[key])) {
+      if (!(key in defaults)) {
+        defaults[key] = {};
+      }
+      mergeObjects(defaults[key], overrides[key]);
+    } else {
+      defaults[key] = overrides[key];
+    }
+  }
+  return defaults;
 }

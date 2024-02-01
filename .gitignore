@@ -5,3 +5,4 @@ node_modules
 dist
 *.local
 public/*.json
+TO_DELETE

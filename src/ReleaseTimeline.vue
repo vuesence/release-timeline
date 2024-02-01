@@ -1,35 +1,36 @@
 <script lang="ts" setup>
 import { nextTick, onMounted, ref } from "vue";
 import TimelineItem from "./TimelineItem.vue";
-import { loadReleases } from "./utils";
-
-// import { type Release, loadReleases } from "./utils";
+import { loadReleases, mergeObjects } from "./utils";
+import { DefaultOptions } from "./options";
 
 const props = defineProps<{
   options: any
 }>();
+
+const options = mergeObjects(DefaultOptions, props.options);
 
 // if (props.options.display.animatedBackground) {
 //   import("./background.css");
 // }
 
 const data = ref();
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      (entry.target as HTMLElement).style.opacity = "1";
-    }
-  });
-}, {
-  threshold: 0.5,
-});
+const root = ref();
 
 onMounted(async () => {
-  data.value = await loadReleases(props.options);
-  observer.disconnect();
+  data.value = await loadReleases(options);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        (entry.target as HTMLElement).style.opacity = "1";
+      }
+    });
+  }, {
+    threshold: 0.5,
+  });
   nextTick(() => {
-    const elements = document.querySelectorAll(".timeline .rt-tr-el");
+    const elements = root.value.querySelectorAll(".timeline .rt-tr-el");
     elements.forEach((element) => {
       observer.observe(element);
     });
@@ -40,12 +41,13 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="release-timeline dark1">
-    <div id="stars"></div>
-    <div id="stars2"></div>
-    <div id="stars3"></div>
+  <section ref="root" class="release-timeline">
+    <div id="stars" class="bg-stars"></div>
+    <div id="stars2" class="bg-stars"></div>
+    <div id="stars3" class="bg-stars"></div>
+
     <header class="header">
-      <h1>Releases</h1>
+      <h1>{{ options.title }}</h1>
       <a
         :href="`https://github.com/${options.github.owner}/${options.github.repo}/releases`" rel="noopener noreferrer"
         target="_blank"
@@ -75,88 +77,9 @@ onMounted(async () => {
   </section>
 </template>
 
-<style>
-@import "./variables.css";
-</style>
-
-<style scoped>
-.dark {
-  background-color: var(--rt-c-bg-alt);
-}
-
-.release-timeline {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--rt-c-bg);
-  min-height: 100vh;
-
-  .header {
-    text-align: center;
-    margin-bottom: 1rem;
-
-    h1 {
-      color: var(--rt-c-text-2);
-      margin-bottom: 0.9rem;
-    }
-
-    a {
-      width: fit-content;
-      display: block;
-      margin: auto;
-      text-decoration: none;
-
-      .github-link {
-        display: flex;
-        border: 1px solid var(--rt-c-border);
-        border-radius: 0.3rem;
-        padding: 8px;
-        width: fit-content;
-        color: var(--rt-c-text-2);
-        font-size: 0.9rem;
-        font-weight: 600;
-        transition: color 0.3s ease-in-out;
-
-        .github-icon {
-          margin-right: 0.6em;
-          display: flex;
-        }
-
-        &:hover {
-          color: var(--rt-c-text-1);
-        }
-
-      }
-    }
-  }
-
-  .timeline {
-    .timeline-record {
-      padding-bottom: 0.75rem;
-      padding-top: 0.75rem;
-      justify-content: center;
-      align-items: center;
-      min-height: 24px;
-      display: flex;
-      position: relative;
-      opacity: 0.2;
-      transition: opacity 1.2s ease;
-
-      .line {
-        background-color: var(--rt-c-text-3);
-        flex-shrink: 0;
-        width: 0.125rem;
-        height: 100%;
-        margin-left: -1px;
-        top: 0;
-        left: 50%;
-        right: 50%;
-        position: absolute;
-      }
-
-    }
-  }
-}
+<style lang="scss">
+@import "./css/user-badge.css";
+@import "./css/timeline-item.css";
+@import "./css/timeline-item-issues.css";
+@import "./css/release-timeline.css";
 </style>

@@ -1,4 +1,5 @@
 export const DefaultOptions = {
+  title: "Releases",
   github: {
     owner: "vuejs",
     repo: "vitepress",
@@ -28,7 +29,6 @@ export const DefaultOptions = {
     span: 200,
   },
   display: {
-    releaseName: true,
     animatedBackground: true,
     animatedBackgroundForLightTheme: false,
     release: {

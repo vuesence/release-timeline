@@ -69,10 +69,11 @@ function toggle(_tab: string) {
           :href="`https://github.com/${options.github.owner}/${options.github.repo}/pull/${pull.number}`"
           rel="noopener noreferrer" target="_blank" class="issue"
         >
-          <p>
+          <p class="issue-paragraph">
             <span>
-              #{{ pull.number }}: {{ pull.title }}
+              #{{ pull.number }}:
             </span>
+            <span v-html="pull.title" />
             <span v-if="!options.display.release.hidePullUsername"> - @{{ pull.author }}</span>
           </p>
         </a>
@@ -88,8 +89,8 @@ function toggle(_tab: string) {
           class="issue"
         >
           <!-- <p>{{ commit.title }} - @{{ commit.author }}</p> -->
-          <p>
-            <span>{{ commit.title }}</span>
+          <p class="issue-paragraph">
+            <span v-html="commit.title" />
             <span v-if="!options.display.release.hideCommitUsername"> - @{{ commit.author }}</span>
           </p>
         </a>
@@ -98,84 +99,5 @@ function toggle(_tab: string) {
   </div>
 </template>
 
-<style scoped>
-a {
-  text-decoration: none;
-  color: var(--rt-c-brand-1);
-}
-
-.tab {
-  text-wrap: nowrap;
-  background-color: var(--rt-c-bg);
-  color: var(--rt-c-text-3);
-  cursor: pointer;
-  padding: 2px 5px;
-  text-align: left;
-  border: solid 1px var(--rt-c-border);
-  border-radius: 3px;
-  transition: 0.4s;
-  margin: 7px 7px 0 0;
-  font-size: 0.7rem;
-  text-transform: lowercase;
-  letter-spacing: 0.3px;
-  font-weight: 400;
-
-  &.active,
-  &:hover {
-    color: var(--rt-c-text-2);
-    border-color: var(--rt-c-text-2);
-    background-color: var(--rt-c-bg-alt)
-  }
-}
-
-.issues {
-  padding-top: 5px;
-  background-color: var(--rt-c-bg);
-  overflow: hidden;
-  max-height: 0;
-  /* transition: all 0.5s cubic-bezier(0, 1, 0, 1); */
-  transition: max-height 0.6s ease-in-out, opacity 0.4s ease-in-out;
-
-  section {
-    opacity: 0;
-    display: none;
-    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
-    &.open {
-      opacity: 1;
-      display: block;
-      transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
-    }
-  }
-
-  /* .issue-wrapper { */
-    .issue {
-      font-size: 0.8rem;
-      letter-spacing: -0.3px;
-      color: var(--rt-c-text-2);
-      line-height: 0.8rem;
-      display: block;
-      border-style: dashed;
-      border-width: 1px;
-      padding: 3px 4px;
-      border-color: var(--rt-c-border);
-      margin-top: 5px;;
-
-      :deep(a) {
-        color: var(--rt-c-brand-1);
-        font-weight: 500;
-        text-decoration: none;
-      }
-
-      :deep(p) {
-        margin: 1px 0 0 0;
-        .left & {
-          text-align: right;
-        }
-      }
-      .desc & :deep(p) {
-        margin-top: 8px;
-      }
-    /* } */
-  }
-}
+<style>
 </style>

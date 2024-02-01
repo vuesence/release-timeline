@@ -1,7 +1,7 @@
 {
   "name": "release-timeline",
   "type": "module",
-  "version": "0.3.0",
+  "version": "0.4.12",
   "private": false,
   "source": "src/index.ts",
   "author": "Ruslan Makarov",
@@ -40,6 +40,7 @@
   ],
   "scripts": {
     "dev": "vite",
+    "preview": "vite preview",
     "build": "vite build",
     "build:lib": "vite --config vite.config-lib.ts build"
   },
@@ -50,10 +51,9 @@
     "@antfu/eslint-config": "^2.6.3",
     "@types/node": "^20.11.10",
     "@vitejs/plugin-vue": "^5.0.3",
-    "postcss-nesting": "^12.0.2",
+    "sass": "^1.70.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.12",
-    "vite-plugin-dts": "^3.7.2",
     "vue": "^3.4.15"
   }
 }

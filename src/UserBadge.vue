@@ -14,30 +14,3 @@ defineProps<{
     </span>
   </a>
 </template>
-
-<style scoped>
-.user {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  padding: 2px 4px 2px 0px;
-  font-weight: 500;
-  font-size: .75rem;
-  line-height: 1rem;
-
-  .avatar {
-    border-radius: 9999px;
-    width: 1rem;
-    height: 1rem;
-    border: 1px solid var(--rt-c-border);
-    img {
-      border-radius: 9999px;
-      width: 1rem;
-    }
-  }
-
-  .username {
-    padding: 0 0 2px 6px;
-  }
-}
-</style>

@@ -1,8 +1,13 @@
 /* .VPDoc  { */
-.release-timeline  {
-    height: 100%;
-    background: radial-gradient(ellipse at bottom, var(--rt-c-bg-alt) 0%, var(--rt-c-bg) 100%);
+/* .release-timeline  { */
+/* .starred-bg  { */
+    /* height: 100%;
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, var(--rt-c-bg-alt) 0%, var(--rt-c-bg) 100%); */
     /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
+/* } */
+
+.bg-stars {
     overflow: hidden;
 }
 

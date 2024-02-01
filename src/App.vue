@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
+
 import ReleaseTimeline from "./ReleaseTimeline.vue";
 import { DefaultOptions as options } from "./options";
 
-// import "./style.css";
-// import "release-timeline/dist/animated-background.css";
-
-import "./animated-background.css";
+import "./css/animated-background.css";
 
 const key = ref(0);
 
@@ -28,12 +26,14 @@ function changeRepo() {
     Change Repo
   </div>
   <ReleaseTimeline :key="key" :options="options" />
+  <!-- <ReleaseTimeline :key="key" options="{&quot;github&quot;: {&quot;owner&quot;: &quot;vuesence&quot;, &quot;repo&quot;: &quot;release-timeline&quot;}}" /> -->
 </template>
 
 <style>
 html {
-    overflow-x: hidden;
-    margin-right: calc(-1 * (100vw - 100%));
+  /* scrollbar fix */
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
 }
 body {
   margin: 0;
@@ -52,9 +52,23 @@ body {
   --rt-c-text-3: #3c3c438f;
   --rt-c-border: #e2e2e3;
   --rt-c-bg: #ffffff;
+  --rt-c-issues: #ffffff;
   --rt-c-bg-alt: #f6f6f7;
   --rt-c-brand-1: #3451b2;
   --rt-c-brand-2: #3a5ccc;
+  --rt-c-circle-bg: #888;
+}
+
+.dark {
+  --rt-c-text-1: rgba(255, 255, 245, 0.86);
+  --rt-c-text-2: rgba(235, 235, 245, 0.6);
+  --rt-c-text-3: rgba(235, 235, 245, 0.38);
+  --rt-c-border: #2e2e32;
+  --rt-c-bg: #1b1b1f;
+  --rt-c-bg-issues: #1b1b1f;
+  --rt-c-bg-alt: #161618;
+  --rt-c-brand-1: #5c73e7;
+  --rt-c-brand-2: #a8b1ff;
   --rt-c-circle-bg: #888;
 }
 </style>
