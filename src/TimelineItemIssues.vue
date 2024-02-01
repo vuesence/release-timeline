@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+import { nextTick, ref } from "vue";
 
 const props = defineProps<{
   release: any
@@ -7,6 +7,8 @@ const props = defineProps<{
 }>();
 
 const curTab = ref("");
+const issuesSection = ref();
+const issuesMaxHeight = ref(0);
 
 const tabs = [
   {
@@ -32,6 +34,10 @@ if (props.options.display.release.defaultOpenTab) {
 
 function toggle(_tab: string) {
   curTab.value = _tab === curTab.value ? "" : _tab;
+  nextTick(() => {
+    // console.log(issuesSection.value?.scrollHeight);
+    issuesMaxHeight.value = issuesSection.value?.scrollHeight;
+  });
 }
 </script>
 
@@ -49,11 +55,15 @@ function toggle(_tab: string) {
       </span>
     </button>
   </div>
-  <div class="issues" :class="[{ open: curTab !== '' }, curTab]">
-    <div v-if="curTab === 'desc' && release.desc">
+  <div
+    ref="issuesSection"
+    class="issues"
+    :style="{ maxHeight: curTab === '' ? 0 : `${issuesMaxHeight}px` }"
+  >
+    <section v-if="release.desc" :class="{ open: curTab === 'desc' }">
       <div class="issue" v-html="release.desc"></div>
-    </div>
-    <div v-if="curTab === 'pulls'">
+    </section>
+    <section :class="{ open: curTab === 'pulls' }">
       <div v-for="pull in release.pulls" :key="pull.number" class="issue-wrapper">
         <a
           :href="`https://github.com/${options.github.owner}/${options.github.repo}/pull/${pull.number}`"
@@ -67,8 +77,8 @@ function toggle(_tab: string) {
           </p>
         </a>
       </div>
-    </div>
-    <div v-if="curTab === 'commits'">
+    </section>
+    <section :class="{ open: curTab === 'commits' }">
       <div v-for="commit in release.commits" :key="commit.url" class="issue-wrapper">
         <a
           v-if="!options.display.release.hideMergeCommits || !commit.title.startsWith('Merge ')"
@@ -84,7 +94,7 @@ function toggle(_tab: string) {
           </p>
         </a>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -100,11 +110,9 @@ a {
   color: var(--rt-c-text-3);
   cursor: pointer;
   padding: 2px 5px;
-  /* width: 100%; */
   text-align: left;
   border: solid 1px var(--rt-c-border);
   border-radius: 3px;
-  /* outline: none; */
   transition: 0.4s;
   margin: 7px 7px 0 0;
   font-size: 0.7rem;
@@ -118,25 +126,25 @@ a {
     border-color: var(--rt-c-text-2);
     background-color: var(--rt-c-bg-alt)
   }
-
-  /* &.active {
-    font-weight: 700;
-  } */
 }
 
 .issues {
   padding-top: 5px;
   background-color: var(--rt-c-bg);
-  max-height: 0;
-  opacity: 0.3;
   overflow: hidden;
   max-height: 0;
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  /* transition: all 0.5s cubic-bezier(0, 1, 0, 1); */
+  transition: max-height 0.6s ease-in-out, opacity 0.4s ease-in-out;
 
-  &.open {
-    opacity: 1;
-    max-height: 1000px;
-    transition: max-height 1s ease-in-out, opacity 0.4s ease-in-out;
+  section {
+    opacity: 0;
+    display: none;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    &.open {
+      opacity: 1;
+      display: block;
+      transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    }
   }
 
   /* .issue-wrapper { */

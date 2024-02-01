@@ -91,6 +91,7 @@ onMounted(async () => {
   justify-content: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--rt-c-bg);
+  min-height: 100vh;
 
   .header {
     text-align: center;
