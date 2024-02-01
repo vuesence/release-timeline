@@ -2,7 +2,7 @@
 
 Visualization on GitHub releases for any public and private repository.
 
-![](./rt-image.jpg)
+![](./rt.jpg)
 
 ## Documentation
 

@@ -27,8 +27,8 @@
   padding: 0;
 }
 .vp-doc .release-timeline .issue p {
-  margin: 5px 0 0;
-  line-height: .8rem;
+  margin: 1px 0 0;
+  /* line-height: .9rem; */
 }
 .vp-doc .release-timeline .issues h1 {
   font-size: 1.2rem;
