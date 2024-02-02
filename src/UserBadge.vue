@@ -14,3 +14,7 @@ defineProps<{
     </span>
   </a>
 </template>
+
+<style lang="scss">
+@import "./css/user-badge.scss";
+</style>

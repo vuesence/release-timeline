@@ -17,8 +17,8 @@ if (!options) {
 </template>
 
 <style lang="scss">
-@import "./css/user-badge.css";
-@import "./css/timeline-item.css";
-@import "./css/timeline-item-issues.css";
-@import "./css/release-timeline.css";
+@import "./css/user-badge.scss";
+@import "./css/timeline-item.scss";
+@import "./css/timeline-item-issues.scss";
+@import "./css/release-timeline.scss";
 </style>

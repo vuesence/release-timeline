@@ -28,6 +28,9 @@ const tabs = [
   },
 ];
 
+const tabsMobile = tabs;
+tabsMobile[1].title = "pulls";
+
 if (props.options.display.release.defaultOpenTab) {
   curTab.value = props.options.display.release.defaultOpenTab;
 }
@@ -44,7 +47,7 @@ function toggle(_tab: string) {
 <template>
   <div class="issue-tabs">
     <button
-      v-for="tab in tabs"
+      v-for="tab in tabsMobile"
       :key="tab.name"
       class="tab"
       :class="{ active: curTab === tab.name }"
@@ -99,5 +102,6 @@ function toggle(_tab: string) {
   </div>
 </template>
 
-<style>
+<style lang="scss">
+@import "./css/timeline-item-issues.scss";
 </style>

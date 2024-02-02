@@ -1,0 +1,83 @@
+.release-timeline {
+  .timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-left: -9px;
+    transform: translateX(50%);
+    width: 50%;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    &.left {
+      transform: translateX(-50%);
+      flex-direction: row-reverse;
+      margin-left: 9px;
+
+      .content {
+        align-items: flex-end;
+      }
+
+      .release-name {
+        text-align: end;
+      }
+    }
+
+    .circle {
+      border: 1px solid var(--rt-c-border);
+      border-radius: 9999px;
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      margin-top: 0.5rem;
+      box-shadow: var(--rt-c-text-2) 0px 0px 3px 1px;
+      background-color: var(--rt-c-circle-bg);
+
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+
+      time {
+        font-weight: 600;
+        font-size: .8rem;
+        line-height: 1.5rem;
+        color: var(--rt-c-text-3);
+      }
+
+      .tag-name {
+        color: var(--rt-c-brand-1);
+        width: fit-content;
+        /* text-align: right; */
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        margin-top: 0.5rem;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          color: var(--rt-c-brand-2);
+        }
+      }
+
+      .release-name {
+        margin: 3px 0 3px 0;
+        padding-top: 0;
+        border-top: 1px solid var(--rt-c-border);
+        color: var(--rt-c-text-2);
+        font-size: 1.15rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        line-height: 1.4rem;
+      }
+
+      /* .issues { */
+      .issue-tabs {
+        display: flex;
+        gap: 0.6rem;
+      }
+
+    }
+  }
+}
