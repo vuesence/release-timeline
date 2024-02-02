@@ -14,22 +14,22 @@ const tabs = [
   {
     name: "desc",
     title: "Desc",
+    mobileTitle: "Desc",
     show: props.options.display.release.desc,
   },
   {
     name: "pulls",
     title: "Pull Requests",
+    mobileTitle: "Pulls",
     show: props.options.display.release.pulls,
   },
   {
     name: "commits",
     title: "Commits",
+    mobileTitle: "Commits",
     show: props.options.display.release.commits,
   },
 ];
-
-const tabsMobile = tabs;
-tabsMobile[1].title = "pulls";
 
 if (props.options.display.release.defaultOpenTab) {
   curTab.value = props.options.display.release.defaultOpenTab;
@@ -47,14 +47,19 @@ function toggle(_tab: string) {
 <template>
   <div class="issue-tabs">
     <button
-      v-for="tab in tabsMobile"
+      v-for="tab in tabs"
       :key="tab.name"
       class="tab"
       :class="{ active: curTab === tab.name }"
       @click="toggle(tab.name)"
     >
       <span v-if="tab.show">
-        {{ tab.title }}
+        <span class="mobile-only tab-title">
+          {{ tab.mobileTitle }}
+        </span>
+        <span class="not-mobile-only tab-title">
+          {{ tab.title }}
+        </span>
       </span>
     </button>
   </div>
