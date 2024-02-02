@@ -78,8 +78,5 @@ onMounted(async () => {
 </template>
 
 <style lang="scss">
-@import "./css/user-badge.css";
-@import "./css/timeline-item.css";
-@import "./css/timeline-item-issues.css";
-@import "./css/release-timeline.css";
+@import "./css/release-timeline.scss";
 </style>

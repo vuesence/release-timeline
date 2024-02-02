@@ -35,4 +35,5 @@ function formatDate(inputDate: string): string {
 </template>
 
 <style>
+@import "./css/timeline-item.scss";
 </style>
