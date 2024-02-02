@@ -1,7 +1,7 @@
 {
   "name": "release-timeline",
   "type": "module",
-  "version": "0.5.7",
+  "version": "0.5.11",
   "private": false,
   "source": "src/index.ts",
   "author": "Ruslan Makarov",
