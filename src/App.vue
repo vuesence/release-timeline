@@ -57,6 +57,7 @@ body {
   --rt-c-brand-1: #3451b2;
   --rt-c-brand-2: #3a5ccc;
   --rt-c-circle-bg: #888;
+  --rt-font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .dark {
@@ -70,5 +71,6 @@ body {
   --rt-c-brand-1: #5c73e7;
   --rt-c-brand-2: #a8b1ff;
   --rt-c-circle-bg: #888;
+  --rt-font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 </style>
