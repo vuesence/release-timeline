@@ -1,12 +1,11 @@
 import { createApp, defineCustomElement } from "vue";
 import { DefaultOptions } from "./options";
+import ReleaseTimelineCE from "./ReleaseTimeline.ce.vue";
 import ReleaseTimeline from "./ReleaseTimeline.vue";
 import App from "./App.vue";
 
 if (globalThis.window) {
-  import("./ReleaseTimeline.ce.vue").then((module) => {
-    window.customElements.define("release-timeline", defineCustomElement(module));
-  });
+  window.customElements.define("release-timeline", defineCustomElement(ReleaseTimelineCE));
 }
 
 function mountRT(initOptions) {
