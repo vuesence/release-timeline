@@ -2,15 +2,16 @@
 import { ref } from "vue";
 
 import ReleaseTimeline from "./ReleaseTimeline.vue";
-import { DefaultOptions as options } from "./options";
+import { DefaultOptions } from "./options";
+import { mergeObjects } from "./utils";
 
-import "./css/animated-background.css";
+const props = defineProps({
+  initOptions: Object,
+  default: () => ({}),
+});
 
+const options = mergeObjects(DefaultOptions, props.initOptions);
 const key = ref(0);
-
-// configure options
-options.github.owner = "vuesence";
-options.github.repo = "release-timeline";
 
 function changeRepo() {
   const url = prompt("Please enter Github Repo url", "https://github.com/vitejs/vite.git");

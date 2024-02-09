@@ -29,8 +29,8 @@ export const DefaultOptions = {
     span: 200,
   },
   display: {
-    animatedBackground: true,
-    animatedBackgroundForLightTheme: false,
+    // animatedBackground: true,
+    // animatedBackgroundForLightTheme: false,
     release: {
       name: true,
       username: true,
@@ -40,7 +40,7 @@ export const DefaultOptions = {
       hidePullUsername: false,
       hideCommitUsername: true,
       hideMergeCommits: true,
-      // defaultOpenTab: "pulls",
+      defaultOpenTab: "pulls",
     },
   },
 };

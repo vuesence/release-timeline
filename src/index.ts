@@ -1,12 +1,19 @@
-import { defineCustomElement } from "vue";
-import ReleaseTimelineCE from "./ReleaseTimeline.ce.vue";
-import ReleaseTimeline from "./ReleaseTimeline.vue";
+import { createApp, defineCustomElement } from "vue";
 import { DefaultOptions } from "./options";
+import ReleaseTimeline from "./ReleaseTimeline.vue";
+import App from "./App.vue";
 
-// function initCE() {
-window.customElements.define("release-timeline", defineCustomElement(ReleaseTimelineCE));
-// }
+if (globalThis.window) {
+  import("./ReleaseTimeline.ce.vue").then((module) => {
+    window.customElements.define("release-timeline", defineCustomElement(module));
+  });
+}
 
-export { ReleaseTimeline, DefaultOptions };
+function mountRT(initOptions) {
+  const app = createApp(App, { initOptions });
+  app.mount("#release-timeline");
+}
+
+export { ReleaseTimeline, DefaultOptions, mountRT };
 
 export {};

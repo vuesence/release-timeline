@@ -22,6 +22,7 @@ export default defineConfig({
         globals: {
           vue: "Vue",
         },
+        inlineDynamicImports: true,
       },
     },
   },

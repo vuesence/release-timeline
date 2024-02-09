@@ -32,7 +32,7 @@ const tabs = [
 ];
 
 if (props.options.display.release.defaultOpenTab) {
-  curTab.value = props.options.display.release.defaultOpenTab;
+  toggle(props.options.display.release.defaultOpenTab);
 }
 
 function toggle(_tab: string) {
