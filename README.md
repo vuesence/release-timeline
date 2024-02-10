@@ -16,7 +16,7 @@ You can specify any repository via the selection in the upper left corner
 
 ## Documentation
 
-[https://vue-faq.org/en/release-timeline/](https://vue-faq.org/en/release-timeline/)
+- [https://vue-faq.org/en/release-timeline/](https://vue-faq.org/en/release-timeline/)
 
 ## Installation
 
@@ -24,7 +24,7 @@ You can specify any repository via the selection in the upper left corner
 pnpm add release-timeline
 ```
 
-In your code:
+- In Vue 3 project:
 
 ```vue
 <script setup>
@@ -39,6 +39,8 @@ options.github.repo = "release-timeline";
 <ReleaseTimeline :options="options" />
 ```
 
+- For other types of installations, please refer to the [documentation](https://vue-faq.org/en/release-timeline/)
+
 ## Contributions
 
-If you have any ideas for development of optimization of `release-timeline`, feel free to open [issues](https://github.com/vuesence/release-timeline/issues) or [pull requests](https://github.com/vuesence/release-timeline/pulls).
+If you have any ideas for improving `release-timeline`, feel free to open an [issue](https://github.com/vuesence/release-timeline/issues) or [pull request](https://github.com/vuesence/release-timeline/pulls).
