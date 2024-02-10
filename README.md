@@ -1,12 +1,18 @@
-# GitHub release timeline
+# GitHub release timeline visualization
 
-Visualization on GitHub releases for any public and private repository.
+Visualize releases of any GitHub repository on a timeline, with information about commits and pull requests.
+
+Embeds in VitePress, can be a good replacement for `changelog` in the project's technical documentation, automating description of changes and making tracking them convenient for users.
 
 ![](./rt.jpg)
 
+## Demo
+
+- [https://vuesence.github.io/release-timeline/](https://vuesence.github.io/release-timeline/) (you can specify any repository via the selection in the upper left corner)
+
 ## Documentation
 
-## [https://vue-faq.org/ru/release-timeline/](https://vue-faq.org/ru/release-timeline/)
+## [https://vue-faq.org/en/release-timeline/](https://vue-faq.org/en/release-timeline/)
 
 ## Installation
 
@@ -20,16 +26,14 @@ In your code:
 <script setup>
 import { ReleaseTimeline, DefaultOptions as options } from "release-timeline";
 import "release-timeline/dist/style.css";
-// import "release-timeline/dist/animated-background.css";
+import "release-timeline/dist/animated-background.css";
 
 options.github.owner = "vuesence";
-options.github.repo = "arty-crafty";
+options.github.repo = "release-timeline";
 </script>
 
 <ReleaseTimeline :options="options" />
 ```
-
-Importing of the `animated-background.css` is optional. Be aware, the starred background CSS takes 70Kb.
 
 ## Contributors
 
