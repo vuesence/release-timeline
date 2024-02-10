@@ -2,17 +2,21 @@
 
 Visualize releases of any GitHub repository on a timeline, with information about commits and pull requests.
 
-Embeds in VitePress, can be a good replacement for `changelog` in the project's technical documentation, automating description of changes and making tracking them convenient for users.
+Perfectly embeds in VitePress and can also be plugged into any HTML page as a Web component or micro-frontend. Can be a good replacement for `changelog` in the project's technical documentation, automating description of changes and making tracking them convenient for users.
 
 ![](./rt.jpg)
 
+------
+
 ## Demo
 
-- [https://vuesence.github.io/release-timeline/](https://vuesence.github.io/release-timeline/) (you can specify any repository via the selection in the upper left corner)
+- [https://vuesence.github.io/release-timeline/](https://vuesence.github.io/release-timeline/)
+
+You can specify any repository via the selection in the upper left corner
 
 ## Documentation
 
-## [https://vue-faq.org/en/release-timeline/](https://vue-faq.org/en/release-timeline/)
+[https://vue-faq.org/en/release-timeline/](https://vue-faq.org/en/release-timeline/)
 
 ## Installation
 
@@ -35,6 +39,6 @@ options.github.repo = "release-timeline";
 <ReleaseTimeline :options="options" />
 ```
 
-## Contributors
+## Contributions
 
-🚀 If you have any ideas for development of optimization of `release-timeline`, feel free to open [issues](https://github.com/vuesence/release-timeline/issues) or [pull requests](https://github.com/vuesence/release-timeline/pulls).
+If you have any ideas for development of optimization of `release-timeline`, feel free to open [issues](https://github.com/vuesence/release-timeline/issues) or [pull requests](https://github.com/vuesence/release-timeline/pulls).
